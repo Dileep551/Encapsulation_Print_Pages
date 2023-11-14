@@ -48,16 +48,32 @@ class PrinterTest {
     void printPages() {
 
         //Given
-        int pagesPrinted = 5;
-        int tonerLevel = 50;
-        boolean duplex = true;
+        int pagesPrinted1 = 5;
+        int tonerLevel1 = 50;
+        boolean duplex1 = true;
 
         //When
-        Printer printer = new Printer(tonerLevel, duplex);
-        int TotalPages = printer.printPages(pagesPrinted);
+        Printer printer1 = new Printer(tonerLevel1, duplex1);
+        int TotalPages1 = printer1.printPages(pagesPrinted1);
 
         //Then
-        assertEquals(3, TotalPages);
+        assertEquals(3, TotalPages1);
+        assertEquals(3, printer1.getPagesPrinted());
+
+        //Given
+        int pagesPrinted2 = 5;
+        int tonerLevel2 = 50;
+        boolean duplex2 = false;
+
+        //When
+        Printer printer2 = new Printer(tonerLevel2, duplex2);
+        int TotalPages2 = printer2.printPages(pagesPrinted2);
+
+        //Then
+        assertEquals(5, TotalPages2);
+        assertEquals(5, printer2.getPagesPrinted());
+
+
 
 
     }
